@@ -1,0 +1,27 @@
+if getgenv and getgenv().LOADED then return end
+if getgenv then getgenv().LOADED = true end
+
+local id = game.GameId
+local pid = game.PlaceId
+
+if id == 17625359962 or pid == 17625359962 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/73ceb203f608c03abb0d690920a9fe26.lua"))()
+
+elseif id == 286090429 or pid == 286090429 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/508fbe67ebad19b85f5b02f64d0f90cf.lua"))()
+
+elseif id == 17516596118 or pid == 17516596118 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/afd3600d0e1a8321fea303820db81cef.lua"))()
+
+elseif id == 14518422161 or pid == 14518422161 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ede25b25342434279638c2a26666d063.lua"))()
+
+elseif id == 15694891095 or pid == 15694891095 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/5abfe371a0f60271e51850cef25bd5f8.lua"))()
+
+elseif id == 3233893879 or pid == 3233893879 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/2dd52a5525be61f7b403e12f3ad84610.lua"))()
+
+else
+	warn("Game Not Supported, Look inside luahook discord for supported games, if you're inside a supported game and this error shows make a ticket inside discord!")
+end
