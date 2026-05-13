@@ -1,43 +1,34 @@
-if getgenv then
-    if getgenv().UC_LOADED then
-        return;
-    end
-    getgenv().UC_LOADED = true;
+if getgenv and getgenv().LOADED then return end
+if getgenv then getgenv().LOADED = true end
+
+local executor = identifyexecutor and identifyexecutor() or ""
+if executor:find("Volt") then
+	getgenv().gethui = getgenv().gethui or function() return game:GetService("CoreGui") end
 end
 
-= Volt primary support 
-local executor = identifyexecutor and identifyexecutor() or "Unknown"
+-Games Below-
 
-if executor:find("Volt") or executor:lower():find("volt") then
-    getgenv().gethui = getgenv().gethui or function()
-        return game:GetService("CoreGui");
-    end
-end
+local id = game.GameId
+local pid = game.PlaceId
 
-Supported games below ---
+if id == 17625359962 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/73ceb203f608c03abb0d690920a9fe26.lua"))()
 
-local gameId = game.GameId
-local placeId = game.PlaceId
+elseif id == 286090429 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/508fbe67ebad19b85f5b02f64d0f90cf.lua"))()
 
-if gameId == 17625359962 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/73ceb203f608c03abb0d690920a9fe26.lua"))();
+elseif id == 17516596118 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/afd3600d0e1a8321fea303820db81cef.lua"))()
 
-elseif gameId == 286090429 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/508fbe67ebad19b85f5b02f64d0f90cf.lua"))();
+elseif id == 14518422161 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ede25b25342434279638c2a26666d063.lua"))()
 
-elseif gameId == 17516596118 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/afd3600d0e1a8321fea303820db81cef.lua"))();
+elseif id == 15694891095 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/5abfe371a0f60271e51850cef25bd5f8.lua"))()
 
-elseif gameId == 14518422161 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ede25b25342434279638c2a26666d063.lua"))();
-
-elseif gameId == 15694891095 then
-    if placeId == 15694891095 then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/5abfe371a0f60271e51850cef25bd5f8.lua"))();
-    else
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/2dd52a5525be61f7b403e12f3ad84610.lua"))();
-    end
+elseif id == 3233893879 then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/2dd52a5525be61f7b403e12f3ad84610.lua"))()
 
 else
-    warn("Loader: Game Not Supported")
+	warn("Game not supported, noting load ok?")
 end
